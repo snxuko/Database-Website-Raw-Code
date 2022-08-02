@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css?family=McLaren|Quicksand|Shadows+Into+Light&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+/* Element Rules */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    background-color: var(--fourth-color);
+}
+img {
+    max-width: 75vw;
+}
+h2{
+    color: var(--secondary-color);
+}
+header {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    height: 112px;
+}
+:root {
+    --primary-color: #212121;
+    --secondary-color: #edf2fc;
+    --third-color: #d4d4d4;
+    --fourth-color: #181818;
+
+}
+.light-theme {
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+    --third-color: #181818;
+    --fourth-color: #d7ddea;
+
+}
+.musicheader{
+    color: var(--secondary-color);
+}
+
+#dark{
+    width: 30px;
+    cursor: pointer;
+}
+header img{
+    max-width: 100%;
+}
+header figure{
+    max-width: 20%;
+    margin: 1em;
+    margin-left: 2em;
+}
+header h1 { 
+    font-family: 'Quicksand', sans-serif;
+    font-size: 250%;
+    font-weight: lighter;
+    color: var(--secondary-color);
+}
+
+nav {
+    display: flex;
+    background-color: var(--primary-color);
+}
+nav p{
+    flex: 1 1 100px;
+    text-align: center;
+
+}
+nav a { 
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+nav a:hover { 
+    text-decoration: none;
+    color: #e91e63;
+    font-weight: bold;
+    margin-top:-2px; 
+    transition: 0.3s;
+}
+nav label{
+    display: none;
+}
+footer {
+    position: absolute;
+    color: var(--secondary-color);
+    height: auto;
+    width: 100vw;
+    padding-top: 0px;
+    background-color: var(--primary-color);
+}
+
+/* ID Rules */
+#menuItems {
+    display: flex;
+    flex-basis: 100%;
+}
+#musicList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#musicList article {
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: #555555;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 5px;
+}
+#musicList article h2  {
+    margin: 0;
+}
+#musicList article figure {
+    margin: 1em 0;
+}
+#navCheck{
+    display: none;
+}
+
+/* Class Rules */
+.centre {
+    text-align: center;
+    color: var(--secondary-color)
+}
+.float {
+    float: right;
+}
+.italics {
+    font-style: italic;
+}
+.listImg{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.main {
+}
+.homepage {
+    
+}
+.small {
+    font-size: smaller;
+}
+.title{
+    color: #ff5252;
+    font-weight: bold;
+}
+.echotext {
+    color: var(--secondary-color);
+}
+
+/***** BEGIN FORM STYLING ****/
+/*  Add Music Form */
+.addMusic {
+    font-family: Quicksand;
+    margin: 1em auto;
+    max-width: 40em;
+}
+fieldset {
+    border: none;
+}
+legend {
+    font-size: 120%;
+}
+form label {
+    display: inline-block; /* inline-block is a new property for the learners */
+    width: 100%; 
+    box-sizing: border-box;
+    padding: 0.5em 1em; /* havent seen padding combined this way - only seen all or individual properties*/
+    background: #ff5252;
+    color: var(--secondary-color);
+}
+form input, form select, form option {
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+    font-family: Quicksand; /* all inputs, have built in font-family. need to override */
+    font-size: 16px; /* inputs have built in size. need to override */
+}
+form .button {
+    background: #ff5252;
+    color: var(--secondary-color)e;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    transition: background-color 0.5s;
+}
+form .button:hover {
+    cursor: pointer; 
+    animation-name: buttonhover;
+    animation-duration: 1s;
+    background-color: #ff6f6f;
+    transition: background-color 0.5s;
+}
+
+/* CSS for Star Rating System */
+.rating {
+    background: var(--secondary-color);
+    width: 100%;
+    padding: 0;
+}
+.rating input[type="radio"] {
+    /*  
+        Cross browser approach to turning off the radio buttons. 
+        Cant use display: none as it breaks keyboard navigation
+        Can't set size to 0 because this doesnt work in Firefox
+        appearance isnt implemented in the browsers yet, but the 
+        prefixed version is.
+        Appearance allows element to be quickly formatted as another 
+        element: eg a span with an appearance of a button
+        Setting the value to none, turns off all built in styling of 
+        the element
+    */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: auto; /* Reset width of elements from 100% */
+    margin: 0; /* Turn off margins and padding */
+    padding: 0;
+}
+.rating label {
+    display: inline-block; /* Change to inline block so we can apply width and margins */
+    width: 18%; /* Fit 5 on a line */
+    margin-bottom: 0.5em; /* give some room for the hover border to appear */
+    text-align: center;
+    color: #FFD700; /* Make all labels gold */
+    background: var(--secondary-color);
+    cursor: pointer; /* New property - change mouse pointer */
+    border-bottom: 2px solid transparent; /* Transparent border-bottom avoids jumping when a colored border is applied on :hover/:focus */
+}
+.rating input:checked ~ label {
+    color: #ddd; /* Change labels after checked input to silver */
+}
+.rating input:checked + label {
+    color: #FFD700; /* But make label next to checked input gold again */
+}
+.rating:hover input + label { 
+    color: #FFD700; /* Change hovered inputs label gold */
+}
+.rating input:hover ~ label,
+.rating input:focus ~ label,
+.rating input[id="star0"] + label {
+    color: #ddd;
+} /* Change all labels after hovered / focused to silver */
+.rating input:hover + label,
+.rating input:focus + label {
+    color: #FFD700;
+    border-bottom-style: dotted;
+    border-bottom-color: #FFD700;
+} /* changed hovered /  focused elements label to gold with border */
+
+/* Music Page Sort Form */
+#sortForm{
+    float: right;
+}
+#sortForm label{
+    display: inline-block;
+    width: 5em;
+    background-color: var(--secondary-color);
+}
+#sortForm select{
+    display: inline-block;
+    width: 10em;;
+    background-color: var(--secondary-color);
+}
+#sortForm .button {
+    width: 5em;
+}
+/***** END FORM STYLING ****/
+
+
+@media(max-width:640px){
+    header h1 {
+        font-size: 200%;
+    }
+    nav label{
+        display: inline-block;
+        padding: 5px;
+    }
+    nav p{
+        flex-basis: 1em;
+        margin-left: -2em;
+    }
+
+    #menuItems{
+        flex-direction: column;
+        display: none;
+    }
+    #navCheck:checked + #menuItems{
+        display: block;
+    }
+    .fa-bars{
+        color: var(--secondary-color);
+        font-size: 2em;
+        float: left;
+    }
+
+}
+.row{
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.col-1{
+    text-align: center;
+    padding: 4rem;
+}
+
+.col-1 h2{
+    font-size: 54px;
+    font-family: 'Righteous', cursive;
+    color: var(--secondary-color);
+}
+.col-1 h3{
+    font-size: 30px;
+    color: var(--secondary-color);
+    font-weight: 100;
+    font-family: 'Red Hat Display', sans-serif;
+}
+.col-1 p{
+    font-size: 16px;
+    color: #b7b7b7;
+    font-weight: 100;
+}
+.col-1 h4{
+    margin: 30px 0;
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+button{
+     width: 140px;
+     border: 0;
+     padding: 12px 10px;
+     outline: none;
+     color: var(--secondary-color);
+     background: linear-gradient(to right, #fb5283, #ff3527);
+     border-radius: 6px;
+     cursor: pointer;
+     transition: width 0.5s;
+}
+button img{
+    width: 30px;
+    display: none;
+    cursor: pointer;
+
+}
+button:hover img{
+    display: block;
+    cursor: pointer;
+}
+button:hover{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.col-1::after{
+    content: '';
+    width: 10px;
+    height: 57%;
+    background: linear-gradient(#ff469f, #ff6062);
+    position: absolute;
+    left: -40px;
+    top: 50px;
+    border-radius: 15px 0px 0px 15px;
+}
+.col-2{
+    position: relative;
+    flex-basis: 60%;
+    display: flex;
+    align-items: center;
+}
+.infoImages{
+    
+}
